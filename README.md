@@ -85,7 +85,7 @@ public class BorderColorConverter : IValueConverter
 
 ### Output
 
-
+![Output](https://user-images.githubusercontent.com/53489303/201815327-81885641-6851-406b-985a-fa5c11532e0c.png)
 
 ### See also
 
