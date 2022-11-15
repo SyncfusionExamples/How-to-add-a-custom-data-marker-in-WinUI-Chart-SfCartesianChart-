@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CustomDataLabel (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CustomDataLabel (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
