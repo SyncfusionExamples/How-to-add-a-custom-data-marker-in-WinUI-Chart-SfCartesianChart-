@@ -1,0 +1,59 @@
+<Window
+    x:Class="CustomDataLabel.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CustomDataLabel"
+    xmlns:chart="using:Syncfusion.UI.Xaml.Charts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <chart:SfCartesianChart Header="Oxygen Level">
+            <chart:SfCartesianChart.DataContext>
+                <local:ViewModel/>
+            </chart:SfCartesianChart.DataContext>
+
+            <chart:SfCartesianChart.Resources>
+                <local:BorderColorConverter x:Key="borderColorConverter"/>
+                <DataTemplate x:Key="dataLabelTemplate">
+                    <Border Height="10" Width="10" CornerRadius="20"
+                            BorderBrush="{Binding Converter={StaticResource borderColorConverter}}" 
+                            Background="WhiteSmoke" BorderThickness="2">
+                    </Border>
+                </DataTemplate>
+
+                <Style TargetType="Line" x:Key="lineStyle">
+                    <Setter Property="StrokeThickness" Value="0"/>
+                    <Setter Property="Stroke" Value="Transparent"/>
+                </Style>
+                <BrushCollection x:Key="customBrushes">
+                    <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0">
+                        <GradientStop Offset="0" Color="#A8EAEE"/>
+                        <GradientStop Offset="1" Color="#FF0080DF"/>
+                    </LinearGradientBrush>
+                </BrushCollection>
+            </chart:SfCartesianChart.Resources>
+
+            <chart:SfCartesianChart.XAxes>
+                <chart:CategoryAxis Header="Time Period" PlotOffsetStart="20" PlotOffsetEnd="20"
+                                    ShowMajorGridLines="False"
+                                    AxisLineStyle="{StaticResource lineStyle}"/>
+            </chart:SfCartesianChart.XAxes>
+
+            <chart:SfCartesianChart.YAxes>
+                <chart:NumericalAxis Visibility="Collapsed"/>
+            </chart:SfCartesianChart.YAxes>
+            
+            <chart:SplineAreaSeries ItemsSource="{Binding Data}"
+                                    XBindingPath="XValue" YBindingPath="YValue" 
+                                    ShowDataLabels="True"
+                                    PaletteBrushes="{StaticResource customBrushes}">
+                <chart:SplineAreaSeries.DataLabelSettings>
+                    <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabelTemplate}"/>
+                </chart:SplineAreaSeries.DataLabelSettings>
+            </chart:SplineAreaSeries>
+        </chart:SfCartesianChart>
+    </Grid>
+   
+</Window>
