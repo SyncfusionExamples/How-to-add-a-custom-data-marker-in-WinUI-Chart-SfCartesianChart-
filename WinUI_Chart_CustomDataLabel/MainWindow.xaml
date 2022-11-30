@@ -16,7 +16,7 @@
 
             <chart:SfCartesianChart.Resources>
                 <local:BorderColorConverter x:Key="borderColorConverter"/>
-                <DataTemplate x:Key="dataLabelTemplate">
+                <DataTemplate x:Key="dataMarkerTemplate">
                     <Border Height="10" Width="10" CornerRadius="20"
                             BorderBrush="{Binding Converter={StaticResource borderColorConverter}}" 
                             Background="WhiteSmoke" BorderThickness="2">
@@ -50,7 +50,7 @@
                                     ShowDataLabels="True"
                                     PaletteBrushes="{StaticResource customBrushes}">
                 <chart:SplineAreaSeries.DataLabelSettings>
-                    <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabelTemplate}"/>
+                    <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataMarkerTemplate}"/>
                 </chart:SplineAreaSeries.DataLabelSettings>
             </chart:SplineAreaSeries>
         </chart:SfCartesianChart>

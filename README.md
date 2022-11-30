@@ -1,8 +1,8 @@
 # How to add a custom data marker in WinUI Chart (SfCartesianChart)?
 
-This example illustrates how to add a custom view as chart Data Label and customize the appearance based on its Y value in the [WinUI charts](https://www.syncfusion.com/winui-controls/charts).
+This example illustrates how to add a custom view as chart data marker and customize the appearance based on its Y value in the [WinUI charts](https://www.syncfusion.com/winui-controls/charts).
 
-**Step 1:** By using the [ContentTemplate](https://help.syncfusion.com/cr/winui/Syncfusion.UI.Xaml.Charts.ChartDataLabelSettings.html#Syncfusion_UI_Xaml_Charts_ChartDataLabelSettings_ContentTemplate) property of [CartesianDataLabelSettings](https://help.syncfusion.com/cr/winui/Syncfusion.UI.Xaml.Charts.CartesianDataLabelSettings.html), we can add the data label with custom view. The following code example explains how to add a circle ring shape as a data label using the Border control.
+**Step 1:** By using the [ContentTemplate](https://help.syncfusion.com/cr/winui/Syncfusion.UI.Xaml.Charts.ChartDataLabelSettings.html#Syncfusion_UI_Xaml_Charts_ChartDataLabelSettings_ContentTemplate) property of [CartesianDataLabelSettings](https://help.syncfusion.com/cr/winui/Syncfusion.UI.Xaml.Charts.CartesianDataLabelSettings.html), we can add the data label with custom view. The following code example explains how to add a circle shape as a data marker using the Border.
 
 ```
 …
@@ -24,13 +24,13 @@ This example illustrates how to add a custom view as chart Data Label and custom
 </chart:SplineAreaSeries>
 ```
 
-**Step 2:** Using IValueConverter, we can customize the appearance of the BorderBrush color based on the "Y" data point value for the custom data labels as shown in the following code example.
+**Step 2:** Using IValueConverter, we can customize the appearance of the BorderBrush color based on the "Y" data point value for the custom data markers as shown in the following code example.
 
 ```
 …
 <chart:SfCartesianChart.Resources>
     <local:BorderColorConverter x:Key="borderColorConverter"/>
-    <DataTemplate x:Key="dataLabelTemplate">
+    <DataTemplate x:Key="dataMarkerTemplate">
         <Border Height="10" Width="10" CornerRadius="20"
                 BorderBrush="{Binding Converter={StaticResource borderColorConverter}}" 
                 Background="WhiteSmoke" BorderThickness="2">
@@ -44,7 +44,7 @@ This example illustrates how to add a custom view as chart Data Label and custom
                         ShowDataLabels="True"
                         PaletteBrushes="{StaticResource customBrushes}">
     <chart:SplineAreaSeries.DataLabelSettings>
-        <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataLabelTemplate}"/>
+        <chart:CartesianDataLabelSettings ContentTemplate="{StaticResource dataMarkerTemplate}"/>
     </chart:SplineAreaSeries.DataLabelSettings>
 </chart:SplineAreaSeries>
 ```
