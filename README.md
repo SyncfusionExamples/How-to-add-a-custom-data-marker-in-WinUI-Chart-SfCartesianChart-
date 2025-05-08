@@ -82,13 +82,15 @@ public class BorderColorConverter : IValueConverter
     }
 }
 ```
-
-### Output
-
-![Output](https://user-images.githubusercontent.com/53489303/201815327-81885641-6851-406b-985a-fa5c11532e0c.png)
-
 ### See also
 
 [How to customize the data label in WinUI Chart (SfCartesianChart)?](https://help.syncfusion.com/winui/cartesian-charts/datalabels#template)
 
 [How to customize the appearance in WinUI Chart (SfCartesianChart)?](https://help.syncfusion.com/winui/cartesian-charts/appearance)
+
+### Output
+
+![Output](https://user-images.githubusercontent.com/53489303/201815327-81885641-6851-406b-985a-fa5c11532e0c.png)
+
+
+KB link - [How to add a custom data marker in WinUI Chart (SfCartesianChart)](https://support.syncfusion.com/kb/article/12166/how-to-display-custom-data-marker-in-winui-chart-sfcartesianchart)

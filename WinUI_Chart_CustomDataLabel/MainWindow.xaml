@@ -36,8 +36,7 @@
             </chart:SfCartesianChart.Resources>
 
             <chart:SfCartesianChart.XAxes>
-                <chart:CategoryAxis Header="Time Period" PlotOffsetStart="20" PlotOffsetEnd="20"
-                                    ShowMajorGridLines="False"
+                <chart:CategoryAxis Header="Time Period" PlotOffsetStart="20" PlotOffsetEnd="20"  
                                     AxisLineStyle="{StaticResource lineStyle}"/>
             </chart:SfCartesianChart.XAxes>
 
